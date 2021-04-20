@@ -25,9 +25,9 @@ body {
  */
 
  main {
-   display: flex;
-   width: 90%;
-   flex-direction: column;
-   align-items: center;
-   font-family: 'Source Sans Pro', sans-serif;
+  margin: auto;
+  display: flex;
+  width: 90%;
+  flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
  }
