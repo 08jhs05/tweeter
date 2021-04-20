@@ -12,7 +12,7 @@
 }
 
 #tweet-text:focus {
-  border-color: rgb(255, 72, 72);
+  border-color: #FFFF;
 }
 
 .container form div {
