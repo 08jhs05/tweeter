@@ -15,14 +15,14 @@
   border-color: rgb(255, 72, 72);
 }
 
-.container form div {
+.new-tweet-container form div {
   padding-top: 1em;
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
 }
 
-.container form div button{
+.new-tweet-container form div button{
   height: 1.5em;
   width: 120px;
   font-size: 24px;
