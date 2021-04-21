@@ -15,7 +15,7 @@ const createTweetElement = function(tweet) {        // create a single tweet art
       <div class="tweetUserName">${tweet.user.name}</div>
       <div class="tweetAddress">${tweet.user.handle}</div>
     </header>
-      <p class="tweet-body">${tweet.content.text}</p>
+      <p class="tweet-body">${escape(tweet.content.text)}</p>
       <hr>
     <footer class="tweet-footer">
       <div id="tweet-time">${timeago.format(tweet.created_at)}</div>
@@ -26,7 +26,7 @@ const createTweetElement = function(tweet) {        // create a single tweet art
       </div>
     </footer>
     </article>`
-  return $tweet;
+  return $tweet;                          // use escape function to escape unsafe characters from content text passed
 }
 
 const loadTweets = function() {           //load tweets with ajax GET request to /tweets
@@ -58,3 +58,11 @@ $('.new-tweet-form').on('submit', (event) => {   //post new tweet with ajax POST
 });
 
 loadTweets();
+
+//---------------------- Helper functions --------------------------------
+
+const escape = function (str) {                 // this function escapes unsafe characters from passed string and return as div
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
