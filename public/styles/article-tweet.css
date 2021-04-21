@@ -1,12 +1,16 @@
 .tweet-container {
   margin-top: 80px;
-  padding: 20px;
-  border-width: 10px;
-  border: solid #000;
   font-size: 28px
 }
 
-.tweet-container:hover {
+.tweet-article {
+  border: solid #000;
+  padding: 20px;
+  border-width: 6px;
+  margin-bottom: 60px;
+}
+
+.tweet-article:hover {
   box-shadow: 10px 10px rgb(155, 181, 204);
 }
 
@@ -43,6 +47,8 @@ hr {
   justify-content: space-between;
   font-size: 22px;
 }
+
+/* flag retweet hear buttons */
 
 .tweet-footer .tweet-icons .fas{
   margin-left: 16px;
