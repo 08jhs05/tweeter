@@ -46,39 +46,23 @@
       <div>
           <h2 id="username"><b>Jay</b> Shin</h2>
       </div>
-    </header>  
+    </header> 
     <!-- Page-specific (main) content here -->
     <main class="new-tweet-container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form>
+        <form class="new-tweet-form">
           <!-- form for a new tweet -->
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <div>
-            <button type="submit">Tweet</button>
+            <button class="new-tweet-submit" type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
       <section class="tweet-container">
-        <article>
-          <header class="tweet-header">
-            <img src="images/dog.png">
-            <div class="tweetUserName">dog</div>
-            <div class="tweetAddress">@dogdog111</div>
-          </header>
-            <p class="tweet-body">I am a dog.</p>
-            <hr>
-          <footer class="tweet-footer">
-            <div id="tweet-time">4 days ago</div>
-            <div class="tweet-icons">
-              <i class="fas fa-flag"></i>
-              <i class="fas fa-retweet"></i>
-              <i class="fas fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+        <!-- tweet articles will be appended below-->
       </section>  
     </main>
   </body>
@@ -86,6 +70,5 @@
   <!-- App JS -->
   <script type="text/javascript" src="scripts/client.js"></script>
   <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
-  <script type="text/javascript" src="scripts/timeAgoHandler.js"></script>
 
 </html>
