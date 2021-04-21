@@ -1,4 +1,54 @@
-section article header {
+.tweet-container {
+  margin-top: 80px;
+  padding: 20px;
+  border-width: 10px;
+  border: solid #000;
+  font-size: 28px
+}
+
+.tweet-container:hover {
+  box-shadow: 10px 10px rgb(155, 181, 204);
+}
+
+.tweet-header {
+  display: flex;
+  align-items: center;
+}
+
+.tweet-header img {
+  width: 100px;
   height: 100px;
-  background-color: white
+}
+
+.tweet-header .tweetUserName {
+  margin-left: 20px;
+}
+
+.tweet-header .tweetAddress {
+  margin-left: auto;
+  color: rgb(173, 184, 196);
+}
+
+.tweet-body {
+  margin: 1.5em 0 1.5em 0;
+}
+
+hr {
+  border-width: 4px;
+}
+
+.tweet-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 22px;
+}
+
+.tweet-footer .tweet-icons .fas{
+  margin-left: 16px;
+  color: #4056A1
+}
+
+.tweet-footer .tweet-icons .fas:hover{
+  color: rgb(255, 72, 72)
 }
