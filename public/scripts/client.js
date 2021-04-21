@@ -5,7 +5,7 @@ const renderTweets = function(tweets) {
   }
 }
 
-const createTweetElement = function(tweet) {
+const createTweetElement = function(tweet) {        // create a single tweet article from passed data
 let $tweet = `<article class="tweet-article">
 <header class="tweet-header">
   <img src=${tweet.user.avatars}>
@@ -37,6 +37,14 @@ const loadTweets = function() {           //load tweets with ajax GET request to
 
 $('.new-tweet-form').on('submit', (event) => {   //post new tweet with ajax POST request
   event.preventDefault();
+  if($("#tweet-text")[0].value == null || $("#tweet-text")[0].value == "" ) {     // check if new tweet is empty
+    alert('Your tweet cannot be EMPTY!');
+    return;
+  }
+  if($("#tweet-text")[0].value.length > 140) {                      //check if new tweet exceeds 140 characters limit
+    alert('Your tweet exceeded the maximum message length.');
+    return;
+  }
   let str = $("#tweet-text").serialize();
   $.ajax({
     url: "tweets",
