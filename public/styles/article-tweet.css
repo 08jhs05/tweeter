@@ -58,3 +58,12 @@ hr {
 .tweet-footer .tweet-icons .fas:hover{
   color: rgb(255, 72, 72)
 }
+
+/* error message */
+.error-exceedslimit {
+  width: 100%;
+  border: solid red;
+  border-width: 6px;
+  padding: 1em;
+  color: red;
+}
