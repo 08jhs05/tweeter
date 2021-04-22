@@ -39,6 +39,14 @@ const loadTweets = function() {           //load tweets with ajax GET request to
   })
 }
 
+$('.fa-angle-double-down').on('click', function() {         // click listener added to compose button on nav
+  $(".new-tweet-form").slideDown(200, function() {          // when it's clicked, the form is shown and button is hidden
+    $(".new-tweet-form").show();
+  });
+  $("#tweet-text").focus();
+  $('.fa-angle-double-down').hide();
+})
+
 $('.new-tweet-form').on('submit', (event) => {   //post new tweet with ajax POST request
   event.preventDefault();
   if($("#tweet-text")[0].value == null || $("#tweet-text")[0].value == "" ) {     // check if new tweet is empty
@@ -47,16 +55,17 @@ $('.new-tweet-form').on('submit', (event) => {   //post new tweet with ajax POST
   }
 
   if($("#tweet-text")[0].value.length > 140) {                      //check if new tweet exceeds 140 characters limit
-    $(".error-exceedslimit").slideDown(200, function(){
+    $(".error-exceedslimit").slideDown(200, function() {
       $(".error-exceedslimit").show();
     });
     return;
   }
 
-  let str = $("#tweet-text").serialize();
+  let str = $("#tweet-text").serialize();     // serialize tweet text
+  $("#tweet-text")[0].value = "";             // empty textarea after it's serialized and ready to post
 
   if($(".error-exceedslimit").is(":visible")) {
-    $(".error-exceedslimit").slideDown(200, function(){
+    $(".error-exceedslimit").slideDown(200, function() {
       $(".error-exceedslimit").hide();
     });
   }
