@@ -1,4 +1,5 @@
 #tweet-text {
+  margin-top: 20px;
   overflow: auto;
   background-color : #ffffff00; 
   padding-top: 1em;
@@ -13,6 +14,10 @@
 
 #tweet-text:focus {
   border-color: rgb(255, 72, 72);
+}
+
+.fa-angle-double-down:hover {
+  color: orange;
 }
 
 form div {

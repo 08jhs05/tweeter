@@ -31,8 +31,9 @@ body {
   flex-direction: column;
   font-family: 'Source Sans Pro', sans-serif;
  }
-
+ 
  @media only screen and (min-width: 1024px) {         /* responsive layout - when window width is larger than 1024px */
+  
   .main-and-header {
     display: flex;
     padding: 5%;
