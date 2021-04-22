@@ -6,10 +6,10 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Final Product
 
-!["Screenshot of desktop layout"](https://github.com/08jhs05/tinyapp/blob/master/docs/screenshot1.png)
-!["Screenshot of desktop layout when compose button is clicked"](https://github.com/08jhs05/tinyapp/blob/master/docs/screenshot2.png)
-!["Screenshot of mobile layout"](https://github.com/08jhs05/tinyapp/blob/master/docs/screenshot3.png)
-!["Screenshot of mobile layout after a tweet is posted"](https://github.com/08jhs05/tinyapp/blob/master/docs/screenshot4.png)
+!["Screenshot of desktop layout"](https://github.com/08jhs05/tweeter/blob/master/docs/screenshot1.png)
+!["Screenshot of desktop layout when compose button is clicked"](https://github.com/08jhs05/tweeter/blob/master/docs/screenshot2.png)
+!["Screenshot of mobile layout"](https://github.com/08jhs05/tweeter/blob/master/docs/screenshot3.png)
+!["Screenshot of mobile layout after a tweet is posted"](https://github.com/08jhs05/tweeter/blob/master/docs/screenshot4.png)
 
 ## Getting Started
 
