@@ -45,11 +45,22 @@ $('.new-tweet-form').on('submit', (event) => {   //post new tweet with ajax POST
     alert('Your tweet cannot be EMPTY!');
     return;
   }
+
   if($("#tweet-text")[0].value.length > 140) {                      //check if new tweet exceeds 140 characters limit
-    alert('Your tweet exceeded the maximum message length.');
+    $(".error-exceedslimit").slideDown(200, function(){
+      $(".error-exceedslimit").show();
+    });
     return;
   }
+
   let str = $("#tweet-text").serialize();
+
+  if($(".error-exceedslimit").is(":visible")) {
+    $(".error-exceedslimit").slideDown(200, function(){
+      $(".error-exceedslimit").hide();
+    });
+  }
+
   $.ajax({
     url: "tweets",
     type: "post",
