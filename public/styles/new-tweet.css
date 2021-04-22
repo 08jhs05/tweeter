@@ -15,21 +15,17 @@
   border-color: rgb(255, 72, 72);
 }
 
-.new-tweet-container form div {
+form div {
   padding-top: 1em;
   display: flex;
   justify-content: space-between;
   font-family: 'Bungee', cursive;
 }
 
-.new-tweet-container form div button{
+form div button{
   height: 1.5em;
   width: 120px;
   font-size: 24px;
   color: white;
   background-color: #4056A1;
-}
-
-.new-tweet {
-  margin-top: 40px;
 }
