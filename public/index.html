@@ -38,36 +38,38 @@
       </div>
     </nav>
     <!-- header -->
-    <header class="main-header">
-      <div id="profile-pic">
-          <img src="images/profile-hex.png"> 
-      </div>
-      <br>
-      <div>
-          <h2 id="username"><b>Jay</b> Shin</h2>
-      </div>
-    </header> 
-    <!-- Page-specific (main) content here -->
-    <main class="new-tweet-container">
-      <section class="new-tweet">
-        <div class="error-exceedslimit" hidden> 
-          <i class="fas fa-exclamation-triangle"></i> &nbsp; Your tweet exceeded the maximum message length. 
+    <div class="main-and-header">
+      <header class="main-header">
+        <div id="profile-pic">
+            <img src="images/profile-hex.png"> 
         </div>
-        <h2>Compose Tweet</h2>
-        <form class="new-tweet-form">
-          <!-- form for a new tweet -->
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
-            <button class="new-tweet-submit" type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
+        <br>
+        <div>
+            <h2 id="username"><b>Jay</b> Shin</h2>
+        </div>
+      </header> 
+      <!-- Page-specific (main) content here -->
+      <main>
+        <section class="new-tweet">
+          <div class="error-exceedslimit" hidden> 
+            <i class="fas fa-exclamation-triangle"></i> &nbsp; Your tweet exceeded the maximum message length. 
           </div>
-        </form>
-      </section>
-      <section class="tweet-container">
-        <!-- tweet articles will be appended below-->
-      </section>  
-    </main>
+          <h2>Compose Tweet</h2>
+          <form class="new-tweet-form">
+            <!-- form for a new tweet -->
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div>
+              <button class="new-tweet-submit" type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+        <section class="tweet-container">
+          <!-- tweet articles will be appended below-->
+        </section>  
+      </main>
+    </div>
   </body>
   
   <!-- App JS -->
