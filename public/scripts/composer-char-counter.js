@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  console.log('dom loaded');
-  
   setCounterAndChangeColor("#tweet-text");
 
   $("#tweet-text").on("input", function() {
@@ -11,7 +9,7 @@ $(document).ready(function() {
 
 const setCounterAndChangeColor = function(tweetTextDom) {
   $("output.counter")["0"].value = 140 - $(tweetTextDom)["0"].value.length;     // set value of text counter - shows remaining allowed characters count
-  if( $("output.counter")["0"].value < 0 ) {                                 // checks if the counter goes below 0
-    $("output.counter").css("color", "red");                                 // if it does, change color to red, black otherwise
+  if( $("output.counter")["0"].value < 0 ) {
+    $("output.counter").css("color", "red"); 
   } else $("output.counter").css("color", "black");
 }
