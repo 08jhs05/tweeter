@@ -3,12 +3,12 @@ const renderTweets = function(tweets) {
     return a.created_at < b.created_at;             // sort tweets by comparing its time created - tweet created most recently comes first
   })
   for (const tweet of tweets) {
-    const newTweet = createTweetElement(tweet);     // create a new tweet with passed data
-    $(".tweet-container").append(newTweet)          // and append it at tweets container
+    const newTweet = createTweetElement(tweet);
+    $(".tweet-container").append(newTweet) 
   }
 }
 
-const createTweetElement = function(tweet) {        // create a single tweet article from passed data
+const createTweetElement = function(tweet) {
   let $tweet = `<article class="tweet-article">
     <header class="tweet-header">
       <img src=${tweet.user.avatars}>
@@ -29,7 +29,7 @@ const createTweetElement = function(tweet) {        // create a single tweet art
   return $tweet;                          // use escape function to escape unsafe characters from content text passed
 }
 
-const loadTweets = function() {           //load tweets with ajax GET request to /tweets
+const loadTweets = function() {
   $(".tweet-container").empty();          // reset tweet container
   $.ajax({
     url: "tweets",
@@ -39,7 +39,7 @@ const loadTweets = function() {           //load tweets with ajax GET request to
   })
 }
 
-$('.fa-angle-double-down').on('click', function() {         // click listener added to compose button on nav
+$('.fa-angle-double-down').on('click', function() {         // add click listener to compose button on nav
   $(".new-tweet-form").slideDown(200, function() {          // when it's clicked, the form is shown and button is hidden
     $(".new-tweet-form").show();
   });
@@ -47,10 +47,12 @@ $('.fa-angle-double-down').on('click', function() {         // click listener ad
   $('.fa-angle-double-down').hide();
 })
 
-$('.new-tweet-form').on('submit', (event) => {   //post new tweet with ajax POST request
+$('.new-tweet-form').on('submit', (event) => {   // post new tweet with ajax POST request
   event.preventDefault();
   if($("#tweet-text")[0].value == null || $("#tweet-text")[0].value == "" ) {     // check if new tweet is empty
-    alert('Your tweet cannot be EMPTY!');
+    $(".error-emptytweet").slideDown(200, function() {
+      $(".error-emptytweet").show();
+    });
     return;
   }
 
@@ -65,11 +67,17 @@ $('.new-tweet-form').on('submit', (event) => {   //post new tweet with ajax POST
   $("#tweet-text")[0].value = "";             // empty textarea after it's serialized and ready to post
 
   if($(".error-exceedslimit").is(":visible")) {
-    $(".error-exceedslimit").slideDown(200, function() {
+    $(".error-exceedslimit").slideUp(200, function() {      // hide error messages
       $(".error-exceedslimit").hide();
     });
   }
 
+  if($(".error-emptytweet").is(":visible")) {
+    $(".error-emptytweet").slideUp(200, function() {
+      $(".error-emptytweet").hide();
+    });
+  }
+  
   $.ajax({
     url: "tweets",
     type: "post",
@@ -78,8 +86,6 @@ $('.new-tweet-form').on('submit', (event) => {   //post new tweet with ajax POST
 });
 
 loadTweets();
-
-//---------------------- Helper functions --------------------------------
 
 const escape = function (str) {                 // this function escapes unsafe characters from passed string and return as div
   let div = document.createElement("div");
