@@ -1,6 +1,6 @@
 const renderTweets = function(tweets) {
   tweets.sort((a, b) => {
-    return a.created_at < b.created_at;             // sort tweets by comparing its time created - tweet created most recently comes first
+    return b.created_at - a.created_at;             // sort tweets by comparing its time created - tweet created most recently comes first
   })
   for (const tweet of tweets) {
     const newTweet = createTweetElement(tweet);
